@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="输入 GitHub 用户名，实时查看公开资料与最近更新的仓库。由 stefaneliu 制作的 GitHub REST API 项目。">
+  <meta name="theme-color" content="#13251f">
+  <title>GitHub Profile Viewer · stefaneliu</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="./" aria-label="GitHub Profile Viewer 首页"><span class="mark" aria-hidden="true">⌘</span> PROFILE VIEWER</a>
+    <a href="https://github.com/stefaneliu/github-profile-viewer" target="_blank" rel="noopener noreferrer">项目源码 ↗</a>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow"><span class="dot"></span> POWERED BY GITHUB REST API</p>
+      <h1 id="title">每个开发者，<br>都有值得探索的<span>作品。</span></h1>
+      <p class="intro">从一个用户名开始，认识 GitHub 上的开发者。<br>公开资料、代码仓库与创作足迹，一眼看见。</p>
+      <form id="search-form" novalidate>
+        <label for="username">GitHub 用户名</label>
+        <div class="searchbox"><span aria-hidden="true">@</span><input id="username" name="username" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="39" placeholder="例如 stefaneliu" aria-describedby="search-help"><button type="submit">查看资料 <span aria-hidden="true">↗</span></button></div>
+        <p id="search-help">无需登录 · 只查询公开信息 · 不需要访问令牌</p>
+      </form>
+      <div class="examples">试试看 <button type="button" data-user="stefaneliu">stefaneliu ↗</button><button type="button" data-user="octocat">octocat ↗</button><button type="button" data-user="torvalds">torvalds ↗</button></div>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite">输入用户名，或选择一个示例开始探索。</p>
+    <section id="result" hidden aria-label="查询结果" aria-busy="false">
+      <article class="profile panel">
+        <div class="identity"><img id="avatar" width="88" height="88" alt=""><div><p class="eyebrow" id="account-type"></p><h2 id="display-name"></h2><a id="profile-link" target="_blank" rel="noopener noreferrer"></a></div></div>
+        <p id="bio" class="bio"></p>
+        <div id="metadata" class="metadata"></div>
+        <dl class="stats"><div><dt>公开仓库</dt><dd id="repo-count"></dd></div><div><dt>关注者</dt><dd id="followers"></dd></div><div><dt>正在关注</dt><dd id="following"></dd></div></dl>
+      </article>
+      <div class="section-title"><h2>最近更新的仓库</h2><span>最多展示 6 个 · 含 Fork</span></div>
+      <p id="repo-status" role="status"></p>
+      <div id="repos" class="repo-grid"></div>
+      <p id="fetched-at" class="caption"></p>
+    </section>
+    <section class="about panel"><div><p class="eyebrow">ABOUT THIS PROJECT</p><h2>一个小工具，一次真实的 API 实践。</h2></div><p>GitHub Profile Viewer 使用 GitHub REST API 实时获取公开资料与仓库。纯静态页面，无需注册，无后台数据库。由 <a href="https://github.com/stefaneliu">stefaneliu</a> 制作。</p></section>
+  </main>
+  <footer class="wrap"><span>GitHub Profile Viewer</span><span>独立项目，与 GitHub 官方无隶属关系。<a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer">API 文档 ↗</a></span></footer>
+  <noscript><p class="wrap">此工具需要启用 JavaScript 才能查询 GitHub API。</p></noscript>
+</body>
+</html>

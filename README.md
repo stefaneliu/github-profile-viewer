@@ -2,9 +2,13 @@
 
 一个使用 **GitHub REST API** 的公开用户资料查看器，由 [stefaneliu](https://github.com/stefaneliu) 制作。输入用户名，即可查看公开资料和最近更新的 6 个公开仓库。
 
-[项目仓库](https://github.com/stefaneliu/github-profile-viewer) · [GitHub REST API 文档](https://docs.github.com/en/rest)
+[在线演示](https://stefaneliu.github.io/github-profile-viewer/) · [API Watch 维护助手](https://stefaneliu.github.io/github-profile-viewer/api-watch/) · [项目仓库](https://github.com/stefaneliu/github-profile-viewer)
 
-这是独立开发实践，与 GitHub 官方无隶属关系。Pages 需要在仓库设置中启用；以 **Settings → Pages** 显示的实际部署状态为准。
+这是独立开发实践，与 GitHub 官方无隶属关系。Profile Viewer 已通过 GitHub Pages 发布。
+
+## API Watch 维护助手
+
+`api-watch/` 是独立静态工具：实时检查本项目的 API 版本与关键接口，将开发者通知的相关段落生成可勾选清单，保存在本地浏览器并导出 Markdown。通知原文不会上传或保存。它帮助把 API 变更通知变成维护动作，不自动接收邮件或授予会员权益。参见 [详细说明](api-watch/README.md)。
 
 ## 功能
 
